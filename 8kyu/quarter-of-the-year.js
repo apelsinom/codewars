@@ -16,6 +16,6 @@ function quarterOf(month) {
         return `3 quarter`;
     } else if (month > 9) {
         return `4 quarter`;
-    };
+    }
 }
 console.log(quarterOf(7))
