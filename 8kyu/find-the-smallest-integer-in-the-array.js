@@ -9,13 +9,7 @@
 // ✅ SOLUTION:
 class SmallestIntegerFinder {
     findSmallestInt(args) {
-        let smallestInt = args[0];
-        for (let i = 1; i < args.length; i++) {
-            if (args[i] < smallestInt) {
-                smallestInt = args[i];
-            }
-        }
-        return smallestInt;
+        return Math.min(...args);
     }
 }
 const finder = new SmallestIntegerFinder();
