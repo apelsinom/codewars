@@ -32,21 +32,12 @@ function hasSurvived(attackers, defenders){
     if(attackers.length===0) return  true;
     if(defenders.length===0) return  false;
     let [courentDef, courentAtt] = [0, 0];
-    let [sumDef, sunAtt] = [0, 0];
-    for (let i of defenders) {
-        sumDef += i;
-    }
-    console.log(sumDef)
-    for (let i of attackers) {
-        sunAtt += i;
-    }
-    console.log(sunAtt)
+    let sumDef = defenders.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    let sunAtt = attackers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     for (let d in defenders) {
             if(defenders[d]>attackers[d]) courentDef++;
             if(defenders[d]<attackers[d]) courentAtt++;
     }
-    console.log(courentDef)
-    console.log(courentAtt)
     if(courentAtt>courentDef) return false;
     if(courentAtt<courentDef) return true;
     if(courentAtt===courentDef) {
