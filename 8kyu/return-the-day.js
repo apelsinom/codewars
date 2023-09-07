@@ -32,3 +32,14 @@ function whatday(num) {
 }
 
 console.log(whatday(4))
+
+let name = 'Abe';
+const greet_abe = function() {
+    return "Hello, " + name + '!';
+};
+name = 'Ben';
+const greet_ben = function() {
+    return "Hello, " + name + '!';
+};
+console.log(greet_abe())
+console.log(greet_ben())
