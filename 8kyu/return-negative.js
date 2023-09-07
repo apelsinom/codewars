@@ -8,8 +8,9 @@
 // makeNegative(0.12); // return -0.12
 
 // ✅ SOLUTION:
-const makeNegative = num => (num>0 ? -num : num);
-
+function makeNegative(num) {
+    return (num>0 ? -num : num);
+}
 
 console.log(makeNegative(-45))
 console.log(makeNegative(45))
