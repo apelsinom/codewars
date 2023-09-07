@@ -32,11 +32,11 @@ function hasSurvived(attackers, defenders){
     if(attackers.length===0) return  true;
     if(defenders.length===0) return  false;
     let [courentDef, courentAtt] = [0, 0];
-    let sumDef = defenders.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    let sunAtt = attackers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    for (let d in defenders) {
-            if(defenders[d]>attackers[d]) courentDef++;
-            if(defenders[d]<attackers[d]) courentAtt++;
+    let sumDef = defenders.reduce((a, c) => a + c, 0);
+    let sunAtt = attackers.reduce((a, c) => a + c, 0);
+    for (let i in defenders) {
+            if(defenders[i]>attackers[i]) courentDef++;
+            if(defenders[i]<attackers[i]) courentAtt++;
     }
     if(courentAtt>courentDef) return false;
     if(courentAtt<courentDef) return true;
