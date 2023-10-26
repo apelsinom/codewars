@@ -11,29 +11,33 @@
 //     be counted, even if they are paired (like "MOM" and "WOW"). String contains only uppercase letters.
 
 // ✅ SOLUTION:
-function shifter(s){
-    if(s === '') return 0;
-    let counter = 0;
-    const arrayWords = s.split(' ');
-    const arrayWordsNoRepeat = [...new Set(arrayWords)]
-    const arrayWordsNoRepeatFilter = arrayWordsNoRepeat.filter(word => word !== "HOME")
-    for(let itemWord of arrayWordsNoRepeatFilter) {
-        let counterLetter = 0;
-        for(let itemLetter of itemWord) {
-            if(itemLetter ===  "H" ||
-                itemLetter === "I" ||
-                itemLetter === "N" ||
-                itemLetter === "O" ||
-                itemLetter === "S" ||
-                itemLetter === "X" ||
-                itemLetter === "Z" ||
-                itemLetter === "M" ||
-                itemLetter === "W") {
-                counterLetter++;
-            }
-        }
-        if(counterLetter===itemWord.length) counter++;
-    }
-    return counter;
-}
+
+const shifter = s => new Set( s.match( /\b[HINOSXZMW]+\b/g ) ).size ;
+
 console.log(shifter("WHO IS WHO MOM HOME"))
+
+// function shifter(s){
+//     if(s === '') return 0;
+//     let counter = 0;
+//     const arrayWords = s.split(' ');
+//     const arrayWordsNoRepeat = [...new Set(arrayWords)]
+//     const arrayWordsNoRepeatFilter = arrayWordsNoRepeat.filter(word => word !== "HOME")
+//     for(let itemWord of arrayWordsNoRepeatFilter) {
+//         let counterLetter = 0;
+//         for(let itemLetter of itemWord) {
+//             if(itemLetter ===  "H" ||
+//                 itemLetter === "I" ||
+//                 itemLetter === "N" ||
+//                 itemLetter === "O" ||
+//                 itemLetter === "S" ||
+//                 itemLetter === "X" ||
+//                 itemLetter === "Z" ||
+//                 itemLetter === "M" ||
+//                 itemLetter === "W") {
+//                 counterLetter++;
+//             }
+//         }
+//         if(counterLetter===itemWord.length) counter++;
+//     }
+//     return counter;
+// }
